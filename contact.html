@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Apply background */
+        body {
+            background-image: url('iceland.jpeg'); /* Change the URL to your preferred background */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Form container styling */
+        .form-container {
+            width: 40%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social__icons span {
+            margin: 0 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .social__icons span a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social__icons span a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <p>Our Number: 1234567890</p>
+        <div>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="E-Mail" />
+        </div>
+        <textarea cols="30" rows="6" placeholder="Type Your Message"></textarea>
+        <div>
+            <a href="index.html" class="btn btn-primary">Submit</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="section__container">
+            <h4>MyTravel.com</h4>
+            <div class="social__icons">
+                <span><a href="#"><i class="fab fa-facebook-f"></i></a></span>
+                <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                <span><a href="#"><i class="fab fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fab fa-linkedin-in"></i></a></span>
+            </div>
+            <p>Travel makes one modest. You see what a tiny place you occupy in the world.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
