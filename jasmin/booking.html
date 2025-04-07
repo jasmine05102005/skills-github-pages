@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <style>
+        body {
+            background-image: url('boking.jpeg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #confirmationMessage {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #successLink {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #successLink a {
+            text-decoration: none;
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+        #successLink a:hover {
+            background-color: #005f75;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Tickets</h1>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                    <option value="o">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="tel" id="number" name="number" pattern="[0-9]{10}" required />
+            </div>
+            <div class="form-group">
+                <label for="days">Days</label>
+                <input type="number" id="days" name="days" placeholder="Enter number of days" required />
+            </div>
+            <div class="form-group">
+                <label for="date">Booking Date</label>
+                <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+                <label for="ticketType">Choose your destination</label>
+                <select id="ticketType" name="ticketType" required>
+
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cabo Verde">Cabo Verde</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo (Congo-Brazzaville)">Congo (Congo-Brazzaville)</option>
+                    <option value="Congo (Congo-Kinshasa)">Congo (Congo-Kinshasa)</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czechia">Czechia</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Eswatini">Eswatini</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guinea-Bissau">Guinea-Bissau</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Micronesia">Micronesia</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montenegro">Montenegro</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Namibia">Namibia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="North Korea">North Korea</option>
+                    <option value="North Macedonia">North Macedonia</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau">Palau</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+        <div id="confirmationMessage"></div>
+        <div id="successLink">
+            <a href="submit.html">Proceed</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('number').value.trim();  // Fixed this line
+            const days = document.getElementById('days').value.trim();
+            const bookingDate = document.getElementById('date').value;
+            const destination = document.getElementById('ticketType').value;
+
+            if (!firstName || !lastName || !email || !phone || !destination || !days || !bookingDate) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Show the confirmation message
+            const confirmationMessage = `Thank you, ${firstName}! Your ticket to ${destination} is booked for ${days} day(s) on ${bookingDate}.`;
+            document.getElementById('confirmationMessage').innerText = confirmationMessage;
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            // Show the success link
+            document.getElementById('successLink').style.display = 'block';
+
+            // Reset the form after a delay
+            setTimeout(() => {
+                document.getElementById('bookingForm').reset();
+            }, 2000);
+        });
+    </script>
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", async function (event) {
+          event.preventDefault();
+      
+          const formData = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            gender: document.getElementById("gender").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            phone: document.getElementById("number").value,
+            days: document.getElementById("days").value,
+            date: document.getElementById("date").value,
+            destination: document.getElementById("ticketType").value,
+          };
+      
+          const response = await fetch("http://localhost:5000/book", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+      
+          const data = await response.json();
+          if (response.ok) {
+            alert("Ticket Booked Successfully!");
+          } else {
+            alert("Error: " + data.error);
+          }
+        });
+      </script>
+      
+
+</body>
+</html>

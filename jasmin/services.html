@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Services | MyTravel.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.section__container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section__title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section__subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.service__card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.service__card:hover {
+  transform: translateY(-5px);
+}
+
+.service__card i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.service__card h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.service__card p {
+  font-size: 1rem;
+  color: #555;
+}
+</style>
+
+<body>
+
+    <section class="services__section">
+        <div class="section__container">
+            <h2 class="section__title">Our Travel Services 🛫</h2>
+            <p class="section__subtitle">Plan your perfect trip with our services!</p>
+
+            <div class="services__grid">
+                <div class="service__card">
+                    <i class="ri-flight-takeoff-line"></i>
+                    <h3>Flight Booking</h3>
+                    <p>Find and book affordable flights to your dream destinations.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="service__card">
+                    <i class="ri-hotel-line"></i>
+                    <h3>Hotel Reservations</h3>
+                    <p>Book luxurious and budget-friendly hotels worldwide.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="service__card">
+                    <i class="ri-map-pin-line"></i>
+                    <h3>Guided Tours</h3>
+                    <p>Explore cities with expert guides for a memorable experience.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="service__card">
+                    <i class="ri-taxi-line"></i>
+                    <h3>Transport Services</h3>
+                    <p>Convenient car rentals and airport transfers at the best rates.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
